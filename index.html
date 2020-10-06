@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const update = e => {
         const toLine = codepoint => {
             const charCode = codepoint.charCodeAt(0);
-            return `${charCode}\t${NAMES[charCode]}`;
+            return `${charCode.toString(16).padStart(4, " ")}\t${NAMES[charCode]}`;
         }
         result = [...e.target.value].map(toLine).join('\n')
         resultBox.innerText = result;
