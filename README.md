@@ -8,3 +8,9 @@ echo "const NAMES = {" > unicode-names.js
 curl https://www.unicode.org/Public/UCD/latest/ucd/NamesList.txt | grep ^[0-9] | awk -F'\t' '{print "0x"$1":","\""$2"\","}' >> unicode-names.js
 echo "};" >> unicode-names.js
 ```
+
+Deploying changes:
+
+``` sh
+rsync -av --exclude=.* ~/unicode-debugger/ root@159.203.13.241:/srv/www/html/
+```

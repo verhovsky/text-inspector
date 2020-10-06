@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
         resultBox.innerText = result;
     };
     textBox.addEventListener('input', update);
+    textBox.focus();
 });
         </script>
         <style>
@@ -32,8 +33,9 @@ document.addEventListener("DOMContentLoaded", function(){
             #text {
                 /* https://stackoverflow.com/questions/5219175/how-to-make-an-element-width-100-minus-padding */
                 box-sizing: border-box;
-
                 width: 100%;
+
+                font-family: "Noto Sans", sans-serif;
             }
 
             #encoding-select label {
@@ -51,9 +53,7 @@ document.addEventListener("DOMContentLoaded", function(){
         <input type="radio" id="utf-16" name="encoding" value="utf-16">
         <label for="utf-16">UTF-16</label>
         </div> -->
-        <textarea id="text"></textarea>
-
+        <textarea id="text" placeholder="UTF-8 text"></textarea>
         <pre id="result"></pre>
-
     </body>
 </html>
