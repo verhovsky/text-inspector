@@ -1,16 +1,34 @@
-Unicode-debugger shows the bytes that make up a text, the name of the character and
-the classes it belongs to. And displays how codepoints group into emojis.
+Unicode-debugger shows the code points that make up a text and their names
 
-TODO: favicon https://realfavicongenerator.net
+TODO: and the classes it belongs to
+
+---
+
+View the site locally
 
 ``` sh
-echo "const NAMES = {" > unicode-names.js
-curl https://www.unicode.org/Public/UCD/latest/ucd/NamesList.txt | grep ^[0-9] | awk -F'\t' '{print "0x"$1":","\""$2"\","}' >> unicode-names.js
-echo "};" >> unicode-names.js
+python3 -m http.server
 ```
 
-Deploying changes:
+Look at the source data
 
 ``` sh
-rsync -av --exclude=.* ~/unicode-debugger/ root@159.203.13.241:/srv/www/html/
+curl https://www.unicode.org/Public/UCD/latest/ucd/NamesList.txt | less
+```
+
+Update the data in [codepoint-names.js](./codepoint-names.js)
+
+``` sh
+python update_codepoint_names.py
+```
+
+Check which code points are missing
+
+``` sh
+node
+```
+
+``` javascript
+.load codepoint-names.js
+for (let x = 0; x < 0x110000; x++) { if (!NAMES[x]) { console.log(x.toString(16)) } }
 ```
