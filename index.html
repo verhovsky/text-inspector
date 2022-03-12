@@ -18,8 +18,11 @@ document.addEventListener("DOMContentLoaded", function(){
     const resultBox = document.getElementById("result");
     const update = e => {
         const toLine = codepoint => {
-            const charCode = codepoint.charCodeAt(0);
-            return `${charCode.toString(16).padStart(4, " ")}\t${NAMES[charCode]}`;
+            const charCode = codepoint.codePointAt(0);
+            const name = NAMES[charCode] ? NAMES[charCode] : '';
+            let hexCharCode = charCode.toString(16);
+            hexCharCode = hexCharCode.length <= 2 ? hexCharCode.padStart(2, "0") : hexCharCode.padStart(4, "0");
+            return hexCharCode.padStart(6, " ") + '\t' + name;
         }
         result = [...e.target.value].map(toLine).join('\n')
         resultBox.innerText = result;
