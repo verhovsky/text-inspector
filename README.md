@@ -19,6 +19,7 @@ curl https://www.unicode.org/Public/UCD/latest/ucd/NamesList.txt | less
 Update the data in [codepoint-names.js](./codepoint-names.js)
 
 ``` sh
+pip install requests
 python update_codepoint_names.py
 ```
 
