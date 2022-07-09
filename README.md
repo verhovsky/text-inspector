@@ -1,6 +1,6 @@
 Unicode-debugger shows the code points that make up a text and their names
 
-TODO: and the classes it belongs to
+![A screenshot showing the codepoints that make up the text "Hello, world!"](./screenshot.png)
 
 ---
 
