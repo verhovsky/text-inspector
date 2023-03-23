@@ -1,4 +1,4 @@
-Unicode-debugger shows the code points that make up a text and their names
+Text Inspector shows the code points that make up a text and their names
 
 ![A screenshot showing the codepoints that make up the text "Hello, world!"](./screenshot.png)
 

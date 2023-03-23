@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Unicode Debugger</title>
+        <title>Text Inspector</title>
         <meta name="description" content="shows the bytes making up a UTF-8 or UTF-16 sequence">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,6 +37,12 @@ document.addEventListener("DOMContentLoaded", function(){
                 width: 100%;
 
                 font-family: "Noto Sans", sans-serif;
+                font-size: 1rem;
+            }
+
+            #result {
+                font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+                font-size: 1rem;
             }
 
             #encoding-select label {
@@ -46,14 +52,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     </head>
     <body>
-
-        <!-- TODO: explain what an encoding is -->
-        <!-- <div id="encoding-select">
-        <input type="radio" id="utf-8" name="encoding" value="utf-8" checked>
-        <label for="utf-8">UTF-8</label>
-        <input type="radio" id="utf-16" name="encoding" value="utf-16">
-        <label for="utf-16">UTF-16</label>
-        </div> -->
         <textarea id="text" placeholder="UTF-8 text"></textarea>
         <pre id="result"></pre>
     </body>
